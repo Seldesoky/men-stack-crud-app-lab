@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add New Car</title>
+    <style>
+        .back-link {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Add a New Car</h1>
+    <form action="/cars" method="POST">
+        Make: <input type="text" name="make" required><br>
+        Model: <input type="text" name="model" required><br>
+        Color: <input type="text" name="color" required><br>
+        Year: <input type="number" name="year" required><br>
+        Available:
+        <select name="isAvailable">
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+        </select><br>
+        <button type="submit">Add Car</button>
+    </form>
+    <a href="/cars" class="back-link">Back to List of Cars</a>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Car</title>
+</head>
+<body>
+    <h1>Edit Car</h1>
+    <form action="/cars/edit/<%= car._id %>" method="POST">
+        Make: <input type="text" name="make" value="<%= car.make %>" required><br>
+        Model: <input type="text" name="model" value="<%= car.model %>" required><br>
+        Color: <input type="text" name="color" value="<%= car.color %>" required><br>
+        Year: <input type="number" name="year" value="<%= car.year %>" required><br>
+        Available:
+        <select name="isAvailable">
+            <option value="true" <%= car.isAvailable ? 'selected' : '' %>>Yes</option>
+            <option value="false" <%= !car.isAvailable ? 'selected' : '' %>>No</option>
+        </select><br>
+        <button type="submit">Update Car</button>
+    </form>
+    <a href="/cars/edit">Back to Edit Cars List</a>
+</body>
+</html>

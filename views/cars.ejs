@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List of Cars</title>
+    <style>
+        .car-item {
+            margin-bottom: 15px; 
+        }
+        .nav-link {
+            padding: 10px 15px;
+            margin-right: 10px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .nav-link:hover {
+            background-color: #0056b3;
+        }
+        .back-link {
+            color: #007bff;
+            text-decoration: none;
+            display: block;
+            margin-top: 20px;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/" class="nav-link">Home</a>
+        <a href="/cars/new" class="nav-link">Add a New Car</a>
+        <a href="/cars/edit" class="nav-link">Edit</a>
+        <a href="/cars/delete" class="nav-link">Delete</a>
+    </nav>
+    <h1>List of Cars</h1>
+    <ul>
+        <% cars.forEach(car => { %>
+            <li class="car-item">
+                <%= car.make %> <%= car.model %> - <%= car.year %> - Color: <%= car.color %> - Available: <%= car.isAvailable ? 'Yes' : 'No' %>
+            </li>
+        <% }); %>
+    </ul>
+    <a href="/" class="back-link">Back to Home</a>
+</body>
+</html>

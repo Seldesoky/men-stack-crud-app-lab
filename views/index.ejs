@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to the Car Management System</title>
+    <style>
+        .nav-link {
+            padding: 10px 15px;
+            margin-right: 10px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .nav-link:hover {
+            background-color: #0056b3;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: blue;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .button-delete {
+            background-color: red;
+        }
+        .button-edit {
+            background-color: green;
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Car Management System!</h1>
+    <nav>
+        <a href="/cars" class="button">View List of Cars</a>
+        <a href="/cars/new" class="button">Add New Car</a>
+        <a href="/cars/edit" class="button button-edit">Edit Car</a>
+        <a href="/cars/delete" class="button button-delete">Delete Car</a>
+    </nav>
+</body>
+</html>

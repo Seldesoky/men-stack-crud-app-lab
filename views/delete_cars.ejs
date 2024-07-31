@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Cars</title>
+    <style>
+        .button-delete {
+            padding: 5px 10px;
+            background-color: red;
+            color: white;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            margin-left: 10px; 
+        }
+        .car-item {
+            margin-bottom: 15px; 
+        }
+        .nav-link {
+            padding: 10px 15px;
+            margin-right: 10px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .nav-link:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/" class="nav-link">Home</a>
+        <a href="/cars/new" class="nav-link">Add a New Car</a>
+        <a href="/cars/edit" class="nav-link">Edit</a>
+    </nav>
+    <h1>Delete Cars</h1>
+    <ul>
+        <% cars.forEach(car => { %>
+            <li class="car-item">
+                <%= car.make %> <%= car.model %> - <%= car.year %> - Color: <%= car.color %> - Available: <%= car.isAvailable ? 'Yes' : 'No' %>
+                <form action="/cars/delete/<%= car._id %>" method="POST" style="display: inline;">
+                    <button type="submit" class="button-delete">Delete</button>
+                </form>
+            </li>
+        <% }); %>
+    </ul>
+    <a href="/">Back to Home</a>
+</body>
+</html>
